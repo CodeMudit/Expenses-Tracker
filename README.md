@@ -1,123 +1,71 @@
-Expense Tracker
-A simple command-line expense tracker application built in Python. This application allows users to register, log in, add, view, edit, and delete their daily expenses. User data and expense records are stored in JSON files.
+📊 Expense Tracker (Python CLI)
+A simple, interactive command-line expense tracker built with Python.
+Tracks expenses by user, stores data locally in JSON files, and provides secure password hashing with bcrypt.
 
-Features
-User Authentication:
+✨ Features
+✅ Sign up & login with password hashing (bcrypt)
+✅ Add, view, edit, and delete expenses
+✅ Expenses saved in user-specific JSON files
+✅ Supports categories & dates
+✅ Simple command-line interface
 
-Sign Up: Create a new user account with a unique username and a password (hashed using bcrypt for security).
+📦 Requirements
+Python 3.x
 
-Log In: Authenticate existing users to access their expense records.
-
-Expense Management:
-
-Add Expense: Record new expenses with details like date, category (FOOD, TRAVEL, Others), and amount.
-
-View Transactions: Display all recorded expenses for the logged-in user.
-
-Edit Transactions: Modify existing expense entries based on category and date.
-
-Delete Transactions: Remove specific expense entries.
-
-Data Persistence:
-
-User credentials are saved in users.json.
-
-Each user's expenses are saved in a separate JSON file named [username]_expenses.json.
-
-Technologies Used
-Python 3
-
-json module for data storage
-
-bcrypt library for password hashing
-
-Getting Started
-Prerequisites
-Python 3.x installed on your system.
-
-bcrypt library: You can install it using pip:
-
-pip install bcrypt
-
-Installation
-Clone the repository:
-
-git clone https://github.com/your-username/expense-tracker.git
-cd expense-tracker
-
-(Replace your-username and expense-tracker with your actual GitHub username and repository name.)
+bcrypt
 
 Install dependencies:
 
-pip install -r requirements.txt
+bash
+Copy
+Edit
+pip install bcrypt
+▶️ How to run
+Clone the repository and run the script:
 
-(You might need to create a requirements.txt file first if you haven't already. It should contain bcrypt.)
-
-To create requirements.txt:
-
-pip freeze > requirements.txt
-
-How to Run
-Navigate to the project directory in your terminal.
-
-Run the main script:
-
+bash
+Copy
+Edit
 python Expenses.py
+🛠 Project structure
+pgsql
+Copy
+Edit
+Expenses.py          # Main script containing login & expense tracker classes
+users.json           # Auto-generated: stores registered users with hashed passwords
+<username>_expenses.json   # Auto-generated: stores each user's expenses
+🧰 How it works
+Sign up / login
 
-Usage
-Upon running the application, you will be presented with a main menu:
+New users register with a username and password (min. 8 characters)
 
-Welcome to the Expense Tracker
-Please select a valid number :
-1.Sign Up
-2.Log In
-3.Exit
+Passwords are hashed and saved securely
 
-Sign Up:
+Expense management
 
-Select 1 to create a new account.
+Add new expenses with date, category, and amount
 
-Enter a unique username and a password (must be at least 8 characters long).
+View all saved transactions
 
-Your account will be registered, and you will be automatically logged in.
+Edit or delete specific expenses by category & date
 
-Log In:
+Data storage
 
-Select 2 to log in with an existing account.
+All data saved in JSON files for simplicity
 
-Enter your username and password.
+⚙️ Modules & concepts used
+json – for data storage
 
-If successful, you will be logged in to your expense manager.
+bcrypt – secure password hashing
 
-Expense Manager Menu:
-Once logged in, you will see the expense manager options:
+OOP – with Login and Expenses classes
 
-Please select from the following
-1.Add an expense
-2.View all Transactions
-3.Edit Transactions
-4.Delete Transactions
-5.Exit
+CLI inputs & menus
 
-1. Add an expense: Enter the date (DD-MM-YY), category (FOOD/TRAVEL/Others), and amount.
+📌 Note
+This is a beginner-friendly local project – data is not encrypted beyond password hashes.
 
-2. View all Transactions: See a list of all your recorded expenses.
+Intended as a learning project to practice Python, file handling, and basic security.
 
-3. Edit Transactions: Specify the category and date of the transaction you wish to edit, then choose to change the amount, date, or category.
 
-4. Delete Transactions: Provide the category and date of the transaction you want to remove.
 
-5. Exit: Exit the expense manager and return to the main menu (or exit the program if you were already in the main menu).
-
-File Structure
-Expenses.py: The main Python script containing the Login and Expenses classes, and the application's logic.
-
-users.json: (Generated upon first sign-up) Stores user credentials (username and hashed password).
-
-[username]_expenses.json: (Generated upon first expense entry for a user) Stores the expense records for a specific user.
-
-Contributing
-Feel free to fork this repository, open issues, or submit pull requests to improve the project.
-
-License
-This project is open source and available under the MIT License.
